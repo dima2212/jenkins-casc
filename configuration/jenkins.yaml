@@ -1,0 +1,43 @@
+jenkins:
+
+  authorizationStrategy:
+      loggedInUsersCanDoAnything:
+        allowAnonymousRead: false
+
+  securityRealm:
+    local:
+      users:
+        - id: admin
+          password: admin
+        - id: rclayton
+          name: "Roland Clayton [Test]"
+          password: 123
+        - id: jlayne
+          name: "Jerold Layne [Dev]"
+          password: 123
+        - id: sgarret
+          name: "Saint Garrett [Dev]"
+          password: 123
+        - id: agoodwin
+          name: "Adella Goodwin [Test]"
+          password: 123
+        - id: nkeane
+          name: "Neal Keane [AM]"
+          password: 123
+  
+  remotingSecurity:
+    enabled: true 
+
+tool:
+  maven:
+    installations:
+      - name: maven3
+        home: "/opt/maven3"
+        properties:
+          - installSource:
+              installers:
+                - maven:
+                    id: "3.9.6"
+
+jobs:
+  - file: "/var/jenkins/scripts/Initial-Job-Setup.groovy"
