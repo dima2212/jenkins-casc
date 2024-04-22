@@ -38,6 +38,16 @@ tool:
               installers:
                 - maven:
                     id: "3.9.6"
+  nodejs:
+    installations:
+    - name: "nodejs-21.7.3"
+      home: /opt/nodejs
+      properties:
+      - installSource:
+          installers:
+          - nodeJSInstaller:
+              id: "21.7.3"
+              npmPackagesRefreshHours: 72
 
 jobs:
   - file: "/var/jenkins/scripts/Initial-Job-Setup.groovy"

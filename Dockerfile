@@ -1,9 +1,10 @@
 FROM jenkins/jenkins
 
-USER 0
-RUN mkdir -p /opt/maven3 && chown jenkins:jenkins /opt/maven3
+USER root
+RUN mkdir -p /opt/maven3 && chown jenkins:jenkins /opt/maven3 && \
+    mkdir -p /opt/nodejs && chown jenkins:jenkins /opt/nodejs
 
-USER 1000
+USER jenkins
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 ENV CASC_JENKINS_CONFIG /var/jenkins/configuration/jenkins.yaml
 

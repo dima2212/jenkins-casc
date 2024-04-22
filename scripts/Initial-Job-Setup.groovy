@@ -16,3 +16,13 @@ pipelineJob('Build-Maven-App') {
         }
     }
 }
+
+pipeline = new File('/var/jenkins/scripts/Build-React-App.groovy').getText("UTF-8")
+pipelineJob('Build-React-App') {
+    definition {
+        cps {
+            script(pipeline)
+            sandbox()
+        }
+    }
+}

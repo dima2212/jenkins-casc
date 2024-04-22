@@ -14,10 +14,11 @@ job-dsl:latest
 ldap:latest
 mailer:latest
 matrix-auth:latest
+nodejs:latest
 pam-auth:latest
 pipeline-github-lib:latest
 pipeline-stage-view:latest
+pipeline-graph-view:latest
 ssh-slaves:latest
 timestamper:latest
 workflow-aggregator:latest
-ws-cleanup:latest
