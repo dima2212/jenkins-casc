@@ -13,7 +13,7 @@ docker build -t jenkins .
 ```bash
 docker run -d -p 8080:8080 jenkins
 ```
-For persistent storage volume mounts can be used. In this case you need to use the same uid as parent image (1000) for the volume. 
+For persistent storage volume mounts can be used. In this case you need to use the same uid as base image (1000) for the volume. 
 ```bash
 sudo mkdir /var/jenkins_home
 sudo chown -R 1000:1000 /var/jenkins_home
