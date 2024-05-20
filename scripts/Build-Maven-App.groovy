@@ -1,20 +1,20 @@
 pipeline {
     agent any 
-    tools{
+    tools {
         maven 'maven3'
     }
-    stages{
-        stage("Git Checkout"){
-            steps{
+    stages {
+        stage("Git Checkout") {
+            steps {
                 git branch: 'master', changelog: false, poll: false, url: 'https://github.com/jenkins-docs/simple-java-maven-app.git'
             }
         }
-        stage("Build"){
+        stage("Build") {
             steps{
                 sh "mvn -B -DskipTests clean package"
             }
         }
-        stage("Test"){
+        stage("Test") {
             steps{
                 sh "mvn test"
             }

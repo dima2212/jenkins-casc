@@ -26,3 +26,13 @@ pipelineJob('Build-React-App') {
         }
     }
 }
+
+pipeline = new File('/var/jenkins/scripts/Build-Downstream-Job.groovy').getText("UTF-8")
+pipelineJob('Build-Downstream-Job') {
+    definition {
+        cps {
+            script(pipeline)
+            sandbox()
+        }
+    }
+}

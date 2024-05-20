@@ -4,8 +4,8 @@ pipeline {
         nodejs "nodejs-21.7.3"
     }
     stages {
-        stage('Checkout'){
-            steps{
+        stage('Checkout') {
+            steps {
                 git branch:"master", url: "https://github.com/jenkins-docs/building-a-multibranch-pipeline-project.git"
             }
         }   
